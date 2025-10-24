@@ -48,18 +48,19 @@ jobs:
           ACCESS_TOKEN: ${{ steps.exchange_token.outputs.ACCESS_TOKEN }}  # Use the output for the token
           JF_URL: ${{ env.JF_URL }}
         run: |
-          # 1. Create the .terraform.d directory if it doesn't exist (Terraform standard location)
+           echo $ACCESS_TOKEN
+           # 1. Create the .terraform.d directory if it doesn't exist (Terraform standard location)
            mkdir -p ~/.terraform.d 
-          # 2. Define the path to the credentials file
+           # 2. Define the path to the credentials file
            CREDENTIALS_FILE="$HOME/.terraform.d/credentials.tfrc.json"
           
-          # 3. Create the JSON content, injecting the ACCESS_TOKEN
-          #    The 'hts2.jfrog.io' must exactly match the host in your module source.
-          cat << EOF > ${CREDENTIALS_FILE}
-          {
+           # 3. Create the JSON content, injecting the ACCESS_TOKEN
+           #    The 'hts2.jfrog.io' must exactly match the host in your module source.
+           cat << EOF > ${CREDENTIALS_FILE}
+           {
             "credentials": {
               "hts2.jfrog.io": {
-                "token": "${ACCESS_TOKEN}"
+                "token": "$ACCESS_TOKEN"
               }
             }
           }
