@@ -55,3 +55,27 @@ jobs:
      
                      cat $HOME/.terraform.d/credentials.tfrc.json
                      echo "Successfully configured Artifactory token in ${CREDENTIALS_FILE}" 
+            - name: Create main.tf for testing
+
+              run: |
+
+
+                     cat <<EOF > main.tf
+
+                     module "vpc" {
+
+                     source = "hts2.jfrog.io/manu-terra-module__${{ env.MODULE_NAMESPACE }}/${{ env.MODULE_NAME }}/aws"
+
+                       }
+
+                     EOF
+
+                     echo "Created main.tf for testing:"
+
+                     cat main.tf         
+                 # Step 7: Setup Terraform CLI on the runner
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v2 
+            - name: Terraform Init
+              run: terraform init 
+              
