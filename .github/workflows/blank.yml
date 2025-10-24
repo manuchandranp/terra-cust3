@@ -59,7 +59,7 @@ jobs:
           {
             "credentials": {
               "hts2.jfrog.io": {
-                "token": "$ACCESS_TOKEN"
+                "token": "${ACCESS_TOKEN}"
               }
             }
           }
