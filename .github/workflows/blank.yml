@@ -34,10 +34,6 @@ jobs:
                     echo "API Response:"
                     #List token
                     echo "$RESPONSE"
-                     
-          
-        
-                      cat $HOME/.terraform.d/credentials.tfrc.json
-                       echo "Successfully configured Artifactory token in ${CREDENTIALS_FILE}"
+                
 
                  
