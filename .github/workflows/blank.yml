@@ -62,9 +62,9 @@ jobs:
 
                      cat <<EOF > main.tf
 
-                     module "vpc" {
+                     module "module-name" {
 
-                     source = "hts2.jfrog.io/manu-terra-module__myorg/vpc/aws"
+                     source = "hts2.jfrog.io/manu-terra-module__modules/iam/aws"
 
                        }
 
