@@ -64,7 +64,7 @@ jobs:
 
                      module "vpc" {
 
-                     source = "hts2.jfrog.io/manu-terra-module__${{ env.MODULE_NAMESPACE }}/${{ env.MODULE_NAME }}/aws"
+                     source = "hts2.jfrog.io/manu-terra-module__myorg/vpc/aws"
 
                        }
 
