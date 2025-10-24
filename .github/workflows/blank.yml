@@ -63,10 +63,10 @@ jobs:
                 "token": "$ACCESS_TOKEN"
               }
             }
-          }
-          EOF
+           }
+           EOF
           
-          # Optional: Secure the file
-          #chmod 600 "${CREDENTIALS_FILE}"
-          cat $HOME/.terraform.d/credentials.tfrc.json
-          echo "Successfully configured Artifactory token in ${CREDENTIALS_FILE}" 
+           # Optional: Secure the file
+           #chmod 600 "${CREDENTIALS_FILE}"
+           cat $HOME/.terraform.d/credentials.tfrc.json
+           echo "Successfully configured Artifactory token in ${CREDENTIALS_FILE}" 
